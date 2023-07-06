@@ -1,7 +1,9 @@
-import {useVideoConfig} from 'remotion';
+import {useVideoConfig, useCurrentFrame} from 'remotion';
 
 export const MyComposition = () => {
 	const {fps, durationInFrames, width, height} = useVideoConfig();
+	const frame = useCurrentFrame();
+	const opacity = frame / durationInFrames;
 
 	return (
 		<div
@@ -11,6 +13,7 @@ export const MyComposition = () => {
 				textAlign: 'center',
 				color: 'red',
 				fontSize: '5rem',
+				opacity,
 			}}
 		>
 			Hello There Remotion😎
