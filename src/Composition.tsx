@@ -1,4 +1,5 @@
 import {useVideoConfig, useCurrentFrame} from 'remotion';
+import {France} from './France';
 
 export const MyComposition = () => {
 	const {fps, durationInFrames, width, height} = useVideoConfig();
@@ -17,10 +18,7 @@ export const MyComposition = () => {
 			}}
 		>
 			Hello There Remotion😎
-			<p>I made a {durationInFrames / fps} second video</p>
-			<p>
-				Of Resolution {height}X{width}px
-			</p>
+			<France />
 		</div>
 	);
 };
